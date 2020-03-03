@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'pmd'
 
 repositories {
     mavenCentral()
@@ -14,4 +15,10 @@ test {
     filter {
         includeTestsMatching "*Test"
     }
+}
+
+pmd {
+    toolVersion = '6.8.0'
+    ignoreFailures = true
+    ruleSetFiles = files("pmd.xml")
 }
